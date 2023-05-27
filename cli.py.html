@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>cli.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #629755; font-style: italic;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+cli.py</font>
+</center></td></tr></table>
+<pre><span class="s0">&quot;&quot;&quot;CLI interface for cisc179 project. 
+ 
+Be creative! do whatever you want! 
+ 
+- Install click or typer and create a CLI app 
+- Use builtin argparse 
+- Start a web application 
+- Import things from your .base module 
+&quot;&quot;&quot;</span>
+<span class="s2">import </span><span class="s1">argparse</span>
+<span class="s2">from </span><span class="s1">main </span><span class="s2">import </span><span class="s1">show_gui</span>
+
+<span class="s2">def </span><span class="s1">parse_arguments():</span>
+    <span class="s1">parser = argparse.ArgumentParser(description=</span><span class="s3">'Pipe Inventory Management CLI'</span><span class="s1">)</span>
+    <span class="s1">parser.add_argument(</span><span class="s3">'--gui'</span><span class="s2">, </span><span class="s1">action=</span><span class="s3">'store_true'</span><span class="s2">, </span><span class="s1">help=</span><span class="s3">'Launch GUI application'</span><span class="s1">)</span>
+    <span class="s2">return </span><span class="s1">parser.parse_args()</span>
+
+<span class="s2">def </span><span class="s1">main():</span>
+    <span class="s1">args = parse_arguments()</span>
+    <span class="s2">if </span><span class="s1">args.gui:</span>
+        <span class="s1">show_gui()</span>
+    <span class="s2">else</span><span class="s1">:</span>
+        <span class="s4"># Implement CLI functionality here</span>
+        <span class="s1">print(</span><span class="s3">&quot;CLI functionality&quot;</span><span class="s1">)</span>
+
+<span class="s2">if </span><span class="s1">__name__ == </span><span class="s3">'__main__'</span><span class="s1">:</span>
+    <span class="s1">main()</span>
+
+
+
+<span class="s2">def </span><span class="s1">main():  </span><span class="s4"># pragma: no cover</span>
+    <span class="s0">&quot;&quot;&quot; 
+    The main function executes on commands: 
+    `python -m cisc179` and `$ cisc179 `. 
+ 
+    This is your program's entry point. 
+ 
+    You can change this function to do whatever you want. 
+    Examples: 
+        * Run a test suite 
+        * Run a server 
+        * Do some other stuff 
+        * Run a command line application (Click, Typer, ArgParse) 
+        * List all available tasks 
+        * Run an application (Flask, FastAPI, Django, etc.) 
+    &quot;&quot;&quot;</span>
+    <span class="s1">print(</span><span class="s3">&quot;This will do something&quot;</span><span class="s1">)</span>
+</pre>
+</body>
+</html>
